@@ -5,32 +5,337 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Minervaclient</title>
+    <title> | Minervaclient</title>
 
-    <style>body{margin:40px auto;max-width:650px;line-height:1.6;font-size:18px;color:#222;padding:0 10px}h1,h2,h3{line-height:1.2}img{max-width:100%;max-height:100%;display:block;margin-left:auto;margin-right:auto}</style>
-    <link href="http://minervaclient.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Minervaclient" />
-
-    
+    <style>body{font-family:helevetica,sans-serif;line-height:1.6;font-size:16px;color:#222;margin:0}#main{width:90%;margin:auto;display:flex;justify-content:center;padding-top:5vh}#toc{padding-top:100px;padding-right:60px;min-width:150px}#content{max-width:650px;margin:auto}#top{border-top:10px solid #722;color:#722;font-family:pt mono,monospace}a{color:#c00}#top a,#top a:visited{color:inherit}#site-name{margin:0;padding:15px 45px}h1,h2,h3,th{font-family:pt mono,monospace;line-height:1.1}p{text-align:justify}#toc-fixed{top:0;font-weight:500;position:sticky;left:5vw;padding-top:20px}#toc ul{list-style-type:none;padding:0}#toc ul>li>ul>li>ul{display:none}#toc li{list-style-type:none}p img{vertical-align:middle}pre{padding:10px;color:#fafafa;background-color:#300}td,th{min-width:1%;text-align:left}table{padding:10px 0}</style>
+    <link href="http://minervaclient.github.io/public/index.xml" rel="alternate" type="application/rss+xml" title="Minervaclient" />
 </head>
 
+
 <body>
-<div class="header">
-    <h1>
-        <a href="/">Minervaclient</a>
-        <div class="header-menu">
-        </div>
+<div id="top">
+    <h1 id="site-name">
+        <a href="/public">Minervaclient</a>
     </h1>
+  	
+	<div class="header-menu">
+        </div>
+
 </div>
-<div id="content">
+
+<div id="main">
+	<aside id="toc">
+		<div id="toc-fixed">
+			<h3>CLI reference</h3>
+			<p>(switch to <a href="?api">API reference</a>)</p>
+			<nav id="TableOfContents">
+<ul>
+<li>
+<ul>
+<li><a href="#install">Install</a>
+<ul>
+<li><a href="#recent-improvements">Recent improvements</a></li>
+</ul></li>
+<li><a href="#register"><code>register</code></a>
+<ul>
+<li><a href="#options">Options</a></li>
+<li><a href="#supported-formatters">Supported formatters</a></li>
+</ul></li>
+<li><a href="#schedule"><code>schedule</code></a>
+<ul>
+<li><a href="#sources">Sources</a></li>
+<li><a href="#supported-formatters-1">Supported formatters</a></li>
+</ul></li>
+<li><a href="#search"><code>search</code></a>
+<ul>
+<li><a href="#options-1">Options</a></li>
+<li><a href="#supported-formatters-2">Supported formatters</a></li>
+</ul></li>
+<li><a href="#transcript"><code>transcript</code></a>
+<ul>
+<li><a href="#options-2">Options</a></li>
+<li><a href="#supported-formatters-3">Supported formatters</a></li>
+</ul></li>
+<li><a href="#grades"><code>grades</code></a>
+<ul>
+<li><a href="#supported-formatters-4">Supported formatters</a></li>
+</ul></li>
+<li><a href="#assign"><code>assign</code></a></li>
+<li><a href="#formatters">Formatters</a></li>
+<li><a href="#at-your-university">At your university</a></li>
+<li><a href="#warning">Warning</a></li>
+</ul></li>
+</ul>
+</nav>
+			<p><a href="https://github.com/minervaclient/minevaclient"><img src="/github.png" width="16"> View on Github</a></p>
+		</div>
+	</aside>
+	<div id="content">
 
 <header>
-    <h1>Minervaclient</h1>
+    <h1></h1>
 </header>
 <article>
     
+
+<div style="width: 50%; margin: auto;"> <img src="/schedule.png" /></div>
+
+<p>Minervaclient provides a minimalist, composable command-line client, and Python API for Minerva, myCourses, and other tools, so you can focus on extracting information, creating workflows and building apps. Formatters allow you to export data to <a href="#">plain text</a>, <a href="#">JSON</a>, your <a href="#">calendar</a> or <a href="#">spreadsheet</a>. Minervaclient can <a href="#schedule">retrieve your course, assignment and final exam schedules</a>, <a href="#register">register and search for courses</a>, <a href="#assignments">submit assignments</a>, and can perform countless other tasks.</p>
+
+<pre><code class="language-shell">$ minervac register -tWINTER2019 COMP-527-001 PSYC-315-001
+</code></pre>
+
+<p><b><a href="#">See another example&hellip;</a></b></p>
+
+<h2 id="install">Install</h2>
+
+<pre><code class="language-shell">pip install minervaclient
+</code></pre>
+
+<p>Minervaclient uses <a href="#">requests</a> to access HTTP endpoints, <a href="#">beautifulsoup4</a> to extract data from webpages and <a href="#">keyring</a> to securely store your credentials using your operating system&rsquo;s keyring.</p>
+
+<h3 id="recent-improvements">Recent improvements</h3>
+
+<ul>
+<li>Blah bleh</li>
+<li>Bleh blah</li>
+<li>EEk horse</li>
+</ul>
+
+<h2 id="register"><code>register</code></h2>
+
+<pre><code class="language-shell">$ minervac register -tF16 COMP-273-001
+</code></pre>
+
+<p><code>register</code> performs course registration, by course code (e.g. <code>CLAS-201-002</code>) or by CRN (e.g. <code>8144</code>). You must specify the term you are registering for,  via the <code>-t</code> option, but the term code format is very flexible.</p>
+
+<h3 id="options">Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>-j</code></td>
+<td>Jobs allow you to keep track of groups of courses you are registering for at the same time. Once you&rsquo;re enrolled in a class, it&rsquo;s removed from the job and registration will only be re-attempted for the remaining classes.</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="supported-formatters">Supported formatters</h3>
+
+<ul>
+<li><code>text</code></li>
+</ul>
+
+<h2 id="schedule"><code>schedule</code></h2>
+
+<pre><code class="language-shell">$ minervac schedule -t201801
+</code></pre>
+
+<p>Accesses course, assignment and final exam schedules. You must specify the term for which to view the schedule, via the <code>-t</code> option.</p>
+
+<h3 id="sources">Sources</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td></td>
+<td>(Default) Course schedule from Minerva</td>
+</tr>
+
+<tr>
+<td><code>-E</code></td>
+<td>Final exam schedules for registered courses</td>
+</tr>
+
+<tr>
+<td><code>-A</code></td>
+<td>Assignment due dates from myCourses</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="supported-formatters-1">Supported formatters</h3>
+
+<ul>
+<li><code>text</code></li>
+<li><code>calendar</code> (plain-text calendar)</li>
+<li><code>html</code>, <code>pdf</code>, <code>png</code> (visual timetable)</li>
+<li><code>ics</code> (vCalendar)</li>
+<li><code>json</code></li>
+<li><code>csv</code> (spreadsheet)</li>
+</ul>
+
+<h2 id="search"><code>search</code></h2>
+
+<pre><code class="language-shell">$ minervac search -t FALL2019 COMP-202
+</code></pre>
+
+<p>Searches the course schedule, with prerequisite and restriction information from the eCalendar integrated. More advanced queries can be performed via the <a href="#">SQL</a> interface.</p>
+
+<h3 id="options-1">Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>-L</code></td>
+<td>Lectures only</td>
+</tr>
+
+<tr>
+<td><code>-T</code></td>
+<td>Tutorials only</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="supported-formatters-2">Supported formatters</h3>
+
+<ul>
+<li><code>text</code></li>
+<li><code>calendar</code> (plain-text calendar)</li>
+<li><code>html</code>, <code>pdf</code>, <code>png</code> (visual timetable)</li>
+<li><code>ics</code> (vCalendar)</li>
+<li><code>json</code></li>
+<li><code>csv</code> (spreadsheet)</li>
+</ul>
+
+<h2 id="transcript"><code>transcript</code></h2>
+
+<pre><code class="language-shell">$ minervac transcript
+</code></pre>
+
+<p>Accesses the unofficial transcript from Minerva, displaying all enrolled terms by default.</p>
+
+<h3 id="options-2">Options</h3>
+
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td>Option</td>
+<td>Description</td>
+</tr>
+
+<tr>
+<td><code>-t</code><em>term</em></td>
+<td>Limit the displayed records to a given term</td>
+</tr>
+</tbody>
+</table>
+
+<h3 id="supported-formatters-3">Supported formatters</h3>
+
+<ul>
+<li><code>text</code></li>
+<li><code>json</code></li>
+<li><code>csv</code></li>
+</ul>
+
+<h2 id="grades"><code>grades</code></h2>
+
+<pre><code class="language-shell">$ minervac grades 327306
+</code></pre>
+
+<p><code>grades</code> retrieves assignment and course grades from myCourses. Currently, you need to specify the myCourses OU (course code) to access class information.</p>
+
+<h3 id="supported-formatters-4">Supported formatters</h3>
+
+<ul>
+<li><code>text</code></li>
+<li><code>json</code></li>
+<li><code>csv</code></li>
+</ul>
+
+<h2 id="assign"><code>assign</code></h2>
+
+<pre><code class="language-shell">$ minervac assign 327306 -A4
+</code></pre>
+
+<p><code>assign</code> submits assignments and verifies submission status. Currently, you need to specify the myCourses OU (course code) to access class information.</p>
+
+<h2 id="formatters">Formatters</h2>
+
+<p>Minervaclient supports a variety of output formatters, selected via the <code>-f</code> option. Most formatters are generic and can be used with any subcommand, but some commands offer specific ways to display information. If you&rsquo;re using the Python API, you can easily create a custom formatter as well.</p>
+
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+
+<tbody>
+<tr>
+<td><code>text</code></td>
+<td>Plain text, separated into columns. You can use <code>-c</code> to customize which columns to output</td>
+</tr>
+
+<tr>
+<td><code>json</code></td>
+<td>JSON for REST APIs or use with <a href="#">jq</a></td>
+</tr>
+
+<tr>
+<td><code>csv</code></td>
+<td>CSV for import into Microsoft Excel, Google Sheets and other spreadsheet software</td>
+</tr>
+</tbody>
+</table>
+
+<h2 id="at-your-university">At your university</h2>
+
+<p>If your university uses Banner (google for your university name + &ldquo;bwckgens.csv&rdquo;), Shibboleth or Desire2Learn, you might be able to take advantage of <code>minervaclient</code>. Try editing the <code>base_urls</code> in <code>config.py</code> and let us know if how far you get.</p>
+
+<h2 id="warning">Warning</h2>
+
+<p>You are solely responsible for assessing whether your use of <code>minervac</code> is in compliance applicable McGill policies, including the <a href="http://www.mcgill.ca/secretariat/files/secretariat/responsible-use-of-mcgill-it-policy-on-the.pdf">McGill Policy on the Responsible Use of IT Resources</a>. Do not access McGill services with excessive frequency.</p>
+
+<p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &ldquo;AS IS&rdquo; AND
+ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
+WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
+DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR
+ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
+(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
+ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+
 </article>
 
 
+		
+		<hr>
+		<p>Made by <a href="https://npaun.io/">Nicholas Paun</a> and <a href="https://github.com/auryan898">Ryan Au</a>.</p>
+	<div>
     </div>
 </body>
 
