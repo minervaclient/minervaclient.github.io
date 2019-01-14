@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+{{ partial "head.html" . }}
+
+<body>
+    {{- partial "header.html" . -}}
+    <div id="main">
+	<aside id="toc">
+		<div id="toc-fixed">
+			<h3>CLI reference</h3>
+			<p>(switch to <a href="?api">API reference</a>)</p>
+			{{ .TableOfContents }}
+			<p><a href="https://github.com/minervaclient/minevaclient"><img src="/github.png" width="16"> View on Github</a></p>
+		</div>
+	</aside>
+	<div id="content">
+       		{{- block "main" . }}{{- end }}
+		
+		<hr>
+		<p>Made by <a href="https://npaun.io/">Nicholas Paun</a> and <a href="https://github.com/auryan898">Ryan Au</a>.</p>
+	<div>
+    </div>
+</body>
+
+</html>

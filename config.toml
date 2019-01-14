@@ -1,0 +1,4 @@
+baseURL = "http://minervaclient.github.io/"
+languageCode = "en-us"
+title = "Minervaclient"
+theme = "simple"
