@@ -7,7 +7,7 @@ draft: false
 
 <div style="width: 50%; margin: auto;"> <img src="/public/schedule.png" /></div>
 
-Minervaclient provides a minimalist, composable command-line client, and Python API for Minerva, myCourses, and other tools, so you can focus on extracting information, creating workflows and building apps. Formatters allow you to export data to <a href="#">plain text</a>, <a href="#">JSON</a>, your <a href="#">calendar</a> or <a href="#">spreadsheet</a>. Minervaclient can <a href="#schedule">retrieve your course, assignment and final exam schedules</a>, <a href="#register">register and search for courses</a>, <a href="#assignments">submit assignments</a>, and can perform countless other tasks.
+<p class="big" style="font-size: 18px;">Minervaclient provides a minimalist, composable command-line client, and Python API for Minerva, myCourses, and other tools, so you can focus on extracting information, creating workflows and building apps. Formatters allow you to export data to <a href="#">plain text</a>, <a href="#">JSON</a>, your <a href="#">calendar</a> or <a href="#">spreadsheet</a>. Minervaclient can <a href="#schedule">retrieve your course, assignment and final exam schedules</a>, <a href="#register">register and search for courses</a>, <a href="#assignments">submit assignments</a>, and can perform countless other tasks.</p>
 
 
 ```shell
