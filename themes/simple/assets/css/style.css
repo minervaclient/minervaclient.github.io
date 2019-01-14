@@ -46,6 +46,10 @@ a {
 	padding: 15px 45px;
 }
 
+h2 {
+	padding: 10px 0;
+}
+
 h1, h2, h3, th {
 	font-family: 'PT Mono', monospace;
 	line-height: 1.1;
