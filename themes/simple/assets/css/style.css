@@ -93,3 +93,7 @@ td, th {
 table{
 	padding: 10px 0;
 }
+
+hr {
+	border: 1px solid #300;
+}
